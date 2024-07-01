@@ -1,0 +1,184 @@
+@import '../../../../styles/_fonts.scss';
+@import '../../../../styles/_dimns.scss';
+@import '../../../../styles/_colors.scss';
+
+$nav-gap: 32px;
+
+.container {
+    overflow: hidden;
+}
+
+.nav-container {
+    height: 84px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-container {
+        .logo-s {
+            @include font-regular($prime-text, $text-regular);
+            color: $color-accent;
+            font-size: larger;
+        }
+            
+        .logo-e {
+            @include font-regular($prime-text, $text-thin);
+            color: $color-accent;
+            font-size: larger;
+        }
+    }
+
+    .nav-link-container {
+        display: flex;
+        flex-direction: row;
+        gap: $nav-gap;
+
+        .nav-link {
+            @include font-regular($prime-text);
+            font-size: medium;
+            transition: all $anim-time ease;
+
+            &:hover {
+                color: $color-accent;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .nav-control-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .search-container {
+            padding: 8px;
+
+            .search-input {
+                width: 240px;
+                font-size: medium;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                text-decoration: none;
+                caret-color: $color-accent;
+                border-bottom: 1px solid #00000066; 
+                @include font-regular($prime-text, $text-regular);
+
+                &::placeholder {
+                    @include font-regular($prime-text, $text-light);
+                }
+            }
+        }
+
+        .search-btn {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            .material-symbols-outlined {
+                color: $color-black;
+    
+                &:hover {
+                    color: $color-accent;
+                }
+            }
+        }
+    }
+
+    .nav-mobile-menu {
+        display: none;
+        color: $color-white;
+        cursor: pointer;
+    }
+}
+
+.nav-link-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: $nav-gap;
+    align-items: center;
+    
+    .nav-link {
+        @include font-regular($prime-text);
+        font-size: medium;
+        transition: all $anim-time ease;
+        color: $color-white;
+    }
+
+    .nav-control-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 32px;
+
+        .search-container {
+            padding: 8px;
+
+            .search-input {
+                width: 240px;
+                font-size: medium;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                text-decoration: none;
+                caret-color: $color-disabled-l;
+                color: $color-white;
+                border-bottom: 1px solid $color-white; 
+                @include font-regular($prime-text, $text-light);
+
+                &::placeholder {
+                    color: $color-disabled-l;
+                    @include font-regular($prime-text, $text-thin);
+                }
+            }
+        }
+
+        .search-btn {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            .material-symbols-outlined {
+                color: $color-white;
+    
+            }
+        }
+    }
+}
+
+@media (min-width: $width-lg) {
+    .nav-container {  
+        .logo-container .logo-s, .logo-e {
+            font-size: x-large;
+        }
+    }
+}
+
+@media (max-width: $width-md) {
+    .container {
+        max-width: 100%;
+        padding: 0;
+        background-color: $color-accent;
+    }
+
+    .nav-container {  
+        height: 64px;
+        margin-left: 16px;
+        margin-right: 16px;
+
+        .logo-container .logo-e, 
+        .logo-container .logo-s {
+            color: $color-white;
+        }
+
+        .nav-link-container,
+        .nav-control-container {
+            display: none;
+        }
+
+        .nav-mobile-menu {
+            display: block;
+        }
+    }
+}
