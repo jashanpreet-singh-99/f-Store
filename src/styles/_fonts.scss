@@ -1,0 +1,15 @@
+// @import '../../../../styles/fonts.scss';
+
+$prime-text: "Poppins", sans-serif;
+$text-thin : 100;
+$text-light: 300;
+$text-regular: 400;
+$text-medium: 500;
+$text-semibold: 600;
+$text-bold: 700;
+
+@mixin font-regular($font-family, $font-weight: 400) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: normal;
+}
