@@ -1,1 +1,7 @@
-<p> Home </p>
+<div class="container">
+    <div class="hero-text-container" [@fadeIn]="animationStateContainer">
+        <h1 [@expandCollapse]="animationStateTitle">We Help You Make Modern Interior</h1>
+        <span [@expandCollapse]="animationStateText">We will help you to make an elegant and luxurious interior designed by professional interior designer.</span>
+    </div>
+    <img src="/assets/header.jpg" [@expandHorizontal]="{value: animationStateImg}">
+</div>

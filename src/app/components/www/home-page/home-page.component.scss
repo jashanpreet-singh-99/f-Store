@@ -1,0 +1,115 @@
+@import '../../../../styles/_fonts.scss';
+@import '../../../../styles/_dimns.scss';
+@import '../../../../styles/_colors.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 80dvh;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+
+    .hero-text-container {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: $nav-gap;
+        z-index: 2;
+        margin-left: 32px;
+        backdrop-filter: blur(20px);
+        background-color: #FFFFFF77;
+        padding: 32px;
+
+        h1 {
+            @include font-regular($prime-text, $text-bold);
+            font-size: 4em;
+            color: $color-accent;
+            margin-bottom: 0;
+        }
+
+        span {
+            @include font-regular($prime-text);
+            font-size: medium;
+            color: $color-text-secondary;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1;
+        margin-right: 32px;
+    }
+}
+
+@media (min-width: $width-2xl) {
+
+    .container .hero-text-container {
+        width: 30%;
+    }
+}
+
+@media (max-width: $width-xl) {
+
+    .container {
+        padding: 0;
+
+        .hero-text-container {
+            margin-left: 0;
+            width: 50%;
+
+        }
+
+        img {
+            margin: 0;
+        }
+    }
+
+}
+
+@media (max-width: $width-lg) and (min-width: $width-md) {
+
+    .container .hero-text-container {
+        width: 70%;
+    }
+
+}
+
+@media (max-width: $width-md) {
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+
+        .hero-text-container {
+            flex: 1;
+            
+            h1 {
+                font-size: 3.5em;
+            }
+        }   
+    }
+
+}
+
+
+@media (max-width: $width-sm) {
+
+    .container {
+        .hero-text-container {            
+            h1 {
+                font-size: 3em;
+            }
+
+            span {
+                font-size: small;
+            }
+        }   
+    }
+
+}
