@@ -1,27 +1,57 @@
-# FStore
+# 🌟 Angular F-Store 🌟
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+![Banner](screenshots/banner-low-res.png)
 
-## Development server
+Welcome to the **Angular F-Store** repository! This project showcases my skills in **CSS3**, **SCSS**, **HTML5**, and **Angular**. It's designed to provide a delightful and responsive user experience across all devices, including mobile, tablet, and desktop. Dive in to explore sleek animations, responsive designs, and a modern UI that adapts seamlessly to any screen size. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- **Responsive Design**: Adapts to mobile, tablet, and desktop screens effortlessly.
+- **Advanced Animations**: Eye-catching CSS3 animations enhance the user experience.
+- **SCSS Mastery**: Utilizes SCSS for modular and maintainable styles.
+- **HTML5**: Structured and semantic HTML5 elements.
+- **Angular Framework**: Robust and scalable Angular framework.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📸 Screenshots
 
-## Build
+![Home](screenshots/home-page.png)
+*Home Page*
+![About](screenshots/about-us-page.png)
+*About Page*
+![Product](screenshots/products-page.png)
+*Product Page*
+![Contact](screenshots/conact-page.png)
+*Contact Page*
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📚 Technologies Used
 
-## Running unit tests
+- **Angular**: For building a dynamic and responsive SPA (Single Page Application).
+- **SCSS**: For advanced and maintainable styling.
+- **CSS3**: For modern, responsive designs and animations.
+- **HTML5**: For semantic and structured web content.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📖 Usage
 
-## Running end-to-end tests
+Explore the various sections of the e-store:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Home**: Browse featured products.
+- **About**: Go through our mission, Why us.
+- **Products**: View products.
+- **Contact**: Checkout client reviews and our contact details.
 
-## Further help
+## ✨ Highlights
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Custom Animations**: Enjoy smooth transitions and hover effects that bring the interface to life.
+- **Media Queries**: Experience a UI that adapts perfectly to any screen size, ensuring usability and aesthetics.
+- **Component-Based Architecture**: Angular components are used to create a modular and maintainable codebase.
+
+## 🌟 Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+# Inspiration
+https://webdesignmastery.github.io/FurniShop_29-06-24/
