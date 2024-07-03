@@ -1,0 +1,13 @@
+<div class="container grid-container" #featureContainer>
+    <div class="grid-item header" *ngIf="isInView" [@fadeIn]="{value:'', params: {delay: 50}}">
+        <h1>Hot 🔥 deals for you</h1>
+        <p>Online shopping for retail sales direct to consumers</p>
+    </div>
+    <ng-container *ngFor="let feature of features; let i = index">
+        <div *ngIf="isInView" class="grid-item" [@fadeIn]="{value:'', params: {delay: (i + 1) * 500}}">
+            <span class="material-symbols-outlined">{{ feature.icon }}</span>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.detail }}</p>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,64 @@
+@import '../../../../../styles/_fonts.scss';
+@import '../../../../../styles/_dimns.scss';
+@import '../../../../../styles/_colors.scss';
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 15dvh;
+    margin-bottom: 5dvh;
+    gap: $nav-gap;
+    overflow: hidden;
+    min-height: 200px;
+
+    .header {
+        h1 {
+            margin: 0;
+            color: $color-accent;
+            @include font-regular($prime-text, $text-bold);
+        }
+    }
+
+    .grid-item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        h3 {
+            @include font-regular($prime-text, $text-semibold);
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            @include font-regular($prime-text);
+        }
+    }
+}
+
+@media (max-width: $width-xl) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "header header header";
+    }
+
+    .header {
+        grid-area: header;
+    }
+}
+
+@media (max-width: $width-md) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "header";
+    }
+}
+
+
+@media (max-width: $width-sm) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

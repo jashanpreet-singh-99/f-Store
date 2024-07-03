@@ -1,52 +1,53 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FeaturesSectionComponent } from "./features-section/features-section.component";
 
 @Component({
-  selector: 'home-page',
-  standalone: true,
-  imports: [],
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss',
-  animations: [
-    trigger('expandCollapse', [
-      state('start', style({
-        transform: 'translateY(100%)',
-        opacity: 0
-      })),
-      state('end', style({
-        opacity: 1
-      })),
-      transition('start <=> end', [
-        animate('500ms ease-out')
-      ])
-    ]),
-    trigger('fadeIn', [
-      state('start', style({
-        transform: 'scale(0.6)',
-        opacity: 0
-      })),
-      state('end', style({
-        transform: 'scale(1)',
-        opacity: 1
-      })),
-      transition('start <=> end', [
-        animate('500ms ease-out')
-      ])
-    ]),
-    trigger('expandHorizontal', [
-      state('start', style({
-        transform: 'translateX(100%)',
-        opacity: 0
-      })),
-      state('end', style({
-        transform: 'translateX(0%)',
-        opacity: 1
-      })),
-      transition('start <=> end', [
-        animate('500ms ease-in-out')
-      ])
-    ])
-  ]
+    selector: 'home-page',
+    standalone: true,
+    templateUrl: './home-page.component.html',
+    styleUrl: './home-page.component.scss',
+    animations: [
+        trigger('expandCollapse', [
+            state('start', style({
+                transform: 'translateY(100%)',
+                opacity: 0
+            })),
+            state('end', style({
+                opacity: 1
+            })),
+            transition('start <=> end', [
+                animate('500ms ease-out')
+            ])
+        ]),
+        trigger('fadeIn', [
+            state('start', style({
+                transform: 'scale(0.6)',
+                opacity: 0
+            })),
+            state('end', style({
+                transform: 'scale(1)',
+                opacity: 1
+            })),
+            transition('start <=> end', [
+                animate('500ms ease-out')
+            ])
+        ]),
+        trigger('expandHorizontal', [
+            state('start', style({
+                transform: 'translateX(100%)',
+                opacity: 0
+            })),
+            state('end', style({
+                transform: 'translateX(0%)',
+                opacity: 1
+            })),
+            transition('start <=> end', [
+                animate('500ms ease-in-out')
+            ])
+        ])
+    ],
+    imports: [FeaturesSectionComponent]
 })
 export class HomePageComponent implements OnInit{
 
