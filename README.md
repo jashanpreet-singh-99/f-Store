@@ -1,6 +1,8 @@
 # 🌟 Angular F-Store 🌟
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://f-store.jashanswork.com/)
 
 ![Banner](screenshots/banner-low-res.png)
+
 
 Welcome to the **Angular F-Store** repository! This project showcases my skills in **CSS3**, **SCSS**, **HTML5**, and **Angular**. It's designed to provide a delightful and responsive user experience across all devices, including mobile, tablet, and desktop. Dive in to explore sleek animations, responsive designs, and a modern UI that adapts seamlessly to any screen size. 
 
