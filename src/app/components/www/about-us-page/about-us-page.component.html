@@ -1,0 +1,21 @@
+<div class="container" #aboutContainer>
+    <div class="header-section">
+        <h1>About us</h1>
+        <p>Our passion for exceptional craftsmanship drives us to curate the best pieces for every room in your house.</p>
+        <button>
+            <span>Learn More</span>
+        </button>
+    </div>
+    <div class="information-container">
+        <div class="text-container">
+            <ng-container *ngFor="let info of infoData; let i = index">
+                <div class="info-container" *ngIf="isInView" [@fadeIn]="{value:'', params: {delay: (i + 1) * 500}}">
+                    <h1>{{ info.index }}</h1>
+                    <h3>{{ info.title }}</h3>
+                    <p>{{ info.detail }}</p>
+                </div>
+            </ng-container>
+        </div>
+        <img src="/assets/about.png" *ngIf="isInView" [@slideInRight]="{value:'', params: {delay: 100}}">
+    </div>
+</div>

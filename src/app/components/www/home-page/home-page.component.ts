@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FeaturesSectionComponent } from "./features-section/features-section.component";
+import { AboutUsPageComponent } from "../about-us-page/about-us-page.component";
 
 @Component({
     selector: 'home-page',
@@ -47,7 +48,7 @@ import { FeaturesSectionComponent } from "./features-section/features-section.co
             ])
         ])
     ],
-    imports: [FeaturesSectionComponent]
+    imports: [FeaturesSectionComponent, AboutUsPageComponent]
 })
 export class HomePageComponent implements OnInit{
 

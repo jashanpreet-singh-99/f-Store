@@ -1,0 +1,145 @@
+@import '../../../../styles/_fonts.scss';
+@import '../../../../styles/_dimns.scss';
+@import '../../../../styles/_colors.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10dvh;
+    margin-bottom: 10dvh;
+    gap: $nav-gap;
+    overflow: hidden;
+    min-height: 200px;
+
+    .header-section {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: 24px;
+        align-items: start;
+
+        h1 {
+            @include font-regular($prime-text, $text-semibold);
+            font-size: xxx-large;
+            color: $color-accent;
+            margin: 0;
+            line-height: 1.1em;
+        }
+
+        p {
+            width: 75%;
+            @include font-regular($prime-text, $text-regular);
+            color: $color-text-secondary;
+            margin: 0;
+        }
+
+        button {
+            position: absolute;
+            display: flex;
+            right: 0;
+            color: $color-white;
+            background-color: $color-accent;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 32px;
+
+            top: 50%;
+            transform: translate(0, -50%);
+
+            span {
+                @include font-regular($prime-text, $text-light);
+                font-size: medium;
+            }
+        }
+    }
+
+    .information-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .text-container {
+            height: auto;
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: $nav-gap;
+
+            .info-container {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                h1 {
+                    @include font-regular($prime-text, $text-semibold);
+                    color: $color-accent;
+                    font-size: xx-large;
+                    line-height: 1.1em;
+                    margin: 0;
+                }
+    
+                h3 {
+                    @include font-regular($prime-text, $text-semibold);
+                    color: $color-accent;
+                    font-size: x-large;
+                    line-height: 1.1em;
+                    margin: 0;
+                }
+    
+                p {
+                    @include font-regular($prime-text, $text-regular);
+                    color: $color-text-secondary;
+                    margin: 0;
+                    font-size: medium;
+                }
+            }
+
+        }
+
+        img {
+            flex: 1;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: $width-lg) {
+
+    .container .information-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: $nav-gap;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+@media (max-width: $width-md) {
+    .container {
+        .header-section {
+            p {
+                width: 100%;
+            }
+    
+            button {
+                position: relative;
+                width: auto;
+                cursor: pointer;
+                transform: none;
+    
+                span {
+                    font-size: small;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $width-sm) {
+    .container .information-container .text-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
