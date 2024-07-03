@@ -5,6 +5,7 @@ import { AboutUsPageComponent } from "../about-us-page/about-us-page.component";
 import { ProductPageComponent } from "../product-page/product-page.component";
 import { ScrollRoutingService } from '../../../services/scroll-routing.service';
 import { NavigationRoutes } from '../../../const/navigation-routes';
+import { ReviewPageComponent } from "../review-page/review-page.component";
 
 @Component({
     selector: 'home-page',
@@ -51,7 +52,7 @@ import { NavigationRoutes } from '../../../const/navigation-routes';
             ])
         ])
     ],
-    imports: [FeaturesSectionComponent, AboutUsPageComponent, ProductPageComponent]
+    imports: [FeaturesSectionComponent, AboutUsPageComponent, ProductPageComponent, ReviewPageComponent]
 })
 export class HomePageComponent implements OnInit, AfterViewInit {
   @ViewChild('homePage', { static: true }) homePage!: ElementRef;

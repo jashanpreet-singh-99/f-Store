@@ -1,0 +1,103 @@
+@import '../../../../styles/_fonts.scss';
+@import '../../../../styles/_dimns.scss';
+@import '../../../../styles/_colors.scss';
+
+.container {
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 72px;
+    padding-bottom: 72px;
+
+    .review-container {
+        width: 80%;
+        background-color: $color-bg;
+        border: none;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $nav-gap;
+
+        h1 {
+            @include font-regular($prime-text, $text-semibold);
+            font-size: xxx-large;
+            line-height: 1.1em;
+            color: $color-accent;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        p {
+            @include font-regular($prime-text);
+            font-size: medium;
+            color: $color-text-secondary;
+            text-align: center;
+        }
+
+        .carousal {
+            margin-top: $nav-gap;
+            margin-bottom: $nav-gap;
+            width: 80%;
+
+            .carousal-item {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                align-items: center;
+                gap: $nav-gap;
+
+                img {
+                    height: 360px;
+                    object-fit: contain;
+                    border: none;
+                }
+
+                .text-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+
+                    p {
+                        @include font-regular($prime-text);
+                        font-size: large;
+                        color: $color-text-secondary;
+                        text-align: start;
+                        margin: 0;
+                    }
+
+                    h3 {
+                        @include font-regular($prime-text, $text-semibold);
+                        font-size: x-large;
+                        margin: 0;
+                        margin-top: $nav-gap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $width-lg) {
+    .container .review-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: $width-md) {
+    .container .review-container .carousal {
+        width: 100%;
+        .carousal-item {
+            flex-direction: column;
+
+            .text-container {
+                p, h3 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

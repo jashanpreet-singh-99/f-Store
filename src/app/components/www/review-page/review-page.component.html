@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="review-container">
+        <h1>What our happy <br> client say</h1>
+        <p>Testimonials Highlighting Our Commitment to Quality, <br> Exceptional Service, and Customer Satisfaction</p>
+        <owl-carousel-o class="carousal" [options]="customOptions">
+            <ng-container *ngFor="let review of reviewData; let i = index">
+            <ng-template carouselSlide>
+                <div class="carousal-item">
+                    <img class="fixed-img" [src]="review.img">
+                    <div class="text-container">
+                        <p>{{ review.review }}</p>
+                        <h3>{{ review.author }}</h3>
+                        <p>{{ review.position }}</p>
+                    </div>
+                </div>
+            </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</div>
