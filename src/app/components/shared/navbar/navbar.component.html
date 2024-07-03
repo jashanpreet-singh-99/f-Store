@@ -5,10 +5,10 @@
             <span class="logo-e">Store</span>
         </div>
         <div class="nav-link-container">
-            <span class="nav-link">Home</span>
-            <span class="nav-link">Products</span>
-            <span class="nav-link">About</span>
-            <span class="nav-link">Contact</span>
+            <span class="nav-link" (click)="scrollToSection(HOME)">Home</span>
+            <span class="nav-link" (click)="scrollToSection(PRODUCT)">Products</span>
+            <span class="nav-link" (click)="scrollToSection(ABOUT)">About</span>
+            <span class="nav-link" (click)="scrollToSection(CONTACT)">Contact</span>
         </div>
         <div class="nav-control-container">
             <div class="search-container">
@@ -23,10 +23,10 @@
         </div>
     </div>
     <div *ngIf="showMobileMenu" class="nav-link-mobile" @expandCollapse>
-        <span class="nav-link">Home</span>
-        <span class="nav-link">Products</span>
-        <span class="nav-link">About</span>
-        <span class="nav-link">Contact</span>
+        <span class="nav-link" (click)="scrollToSection(HOME)">Home</span>
+        <span class="nav-link" (click)="scrollToSection(PRODUCT)">Products</span>
+        <span class="nav-link" (click)="scrollToSection(ABOUT)">About</span>
+        <span class="nav-link" (click)="scrollToSection(CONTACT)">Contact</span>
         <div class="nav-control-container">
             <div class="search-container">
                 <input class="search-input" placeholder="Search" type="text">

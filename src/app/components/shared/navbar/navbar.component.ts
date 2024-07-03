@@ -1,6 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ScrollRoutingService } from '../../../services/scroll-routing.service';
+import { NavigationRoutes } from '../../../const/navigation-routes';
 
 enum NavMode{
   Open,
@@ -45,8 +47,17 @@ enum NavMode{
   ]
 })
 export class NavbarComponent {
+
+  protected HOME = NavigationRoutes.HOME;
+  protected PRODUCT = NavigationRoutes.PRODUCT;
+  protected ABOUT = NavigationRoutes.ABOUT;
+  protected CONTACT = NavigationRoutes.CONTACT;
+
   state: NavMode = NavMode.Closed;
   searchState: NavMode = NavMode.Closed;
+
+  constructor(private _scrollService: ScrollRoutingService) {}
+
 
   toggleNavMode(): void {
     this.state = (this.state === NavMode.Open) ? NavMode.Closed : NavMode.Open;
@@ -66,5 +77,9 @@ export class NavbarComponent {
 
   get showSearchInput(): boolean {
     return (this.searchState === NavMode.Open) ? true : false;
+  }
+
+  scrollToSection(section: string): void {
+    this._scrollService.scrollToElement(section);
   }
 }

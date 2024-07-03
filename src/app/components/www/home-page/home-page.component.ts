@@ -1,8 +1,10 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FeaturesSectionComponent } from "./features-section/features-section.component";
 import { AboutUsPageComponent } from "../about-us-page/about-us-page.component";
 import { ProductPageComponent } from "../product-page/product-page.component";
+import { ScrollRoutingService } from '../../../services/scroll-routing.service';
+import { NavigationRoutes } from '../../../const/navigation-routes';
 
 @Component({
     selector: 'home-page',
@@ -51,7 +53,8 @@ import { ProductPageComponent } from "../product-page/product-page.component";
     ],
     imports: [FeaturesSectionComponent, AboutUsPageComponent, ProductPageComponent]
 })
-export class HomePageComponent implements OnInit{
+export class HomePageComponent implements OnInit, AfterViewInit {
+  @ViewChild('homePage', { static: true }) homePage!: ElementRef;
 
   animationStates: { [key: string]: string } = {
     Img: 'start',
@@ -59,6 +62,12 @@ export class HomePageComponent implements OnInit{
     Title: 'start',
     Text: 'start'
   };
+
+  constructor(private _scrollService: ScrollRoutingService) {}
+
+  ngAfterViewInit(): void {
+    this._scrollService.registerElement(NavigationRoutes.HOME, this.homePage);
+  }
 
   async ngOnInit() {
     await this.triggerAnimation('Img');

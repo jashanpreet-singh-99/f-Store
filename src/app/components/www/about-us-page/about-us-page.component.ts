@@ -1,6 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ScrollRoutingService } from '../../../services/scroll-routing.service';
+import { NavigationRoutes } from '../../../const/navigation-routes';
 
 @Component({
   selector: 'about-us-page',
@@ -35,7 +37,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
     ])
   ]
 })
-export class AboutUsPageComponent implements OnInit {
+export class AboutUsPageComponent implements OnInit, AfterViewInit {
+  @ViewChild('aboutPage', { static: true }) aboutPage!: ElementRef;
+  isInView: boolean = false;
 
   infoData = [
     {
@@ -59,20 +63,23 @@ export class AboutUsPageComponent implements OnInit {
     }
   ];
 
-  @ViewChild('aboutContainer', { static: true }) aboutContainer!: ElementRef;
-  isInView: boolean = false;
+  constructor(private _scrollService: ScrollRoutingService) {}
+
+  ngAfterViewInit(): void {
+    this._scrollService.registerElement(NavigationRoutes.ABOUT, this.aboutPage);
+  }
 
   ngOnInit() {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.isInView = true;
-          observer.unobserve(this.aboutContainer.nativeElement);
+          observer.unobserve(this.aboutPage.nativeElement);
         }
       });
     });
 
-    observer.observe(this.aboutContainer.nativeElement);
+    observer.observe(this.aboutPage.nativeElement);
   }
 
 }

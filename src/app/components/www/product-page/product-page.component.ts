@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ProductPricePipe } from "../../shared/pipes/product-price.pipe";
+import { ScrollRoutingService } from '../../../services/scroll-routing.service';
+import { NavigationRoutes } from '../../../const/navigation-routes';
 
 @Component({
     selector: 'product-page',
@@ -9,7 +11,8 @@ import { ProductPricePipe } from "../../shared/pipes/product-price.pipe";
     styleUrl: './product-page.component.scss',
     imports: [CommonModule, ProductPricePipe]
 })
-export class ProductPageComponent {
+export class ProductPageComponent implements AfterViewInit {
+  @ViewChild('productPage') productPage!: ElementRef;
 
   products = [
     {
@@ -43,5 +46,11 @@ export class ProductPageComponent {
       img: '/assets/product-6.png'
     }
   ];
+
+  constructor(private _scrollService: ScrollRoutingService) {}
+
+  ngAfterViewInit(): void {
+    this._scrollService.registerElement(NavigationRoutes.PRODUCT, this.productPage);
+  }
 
 }
