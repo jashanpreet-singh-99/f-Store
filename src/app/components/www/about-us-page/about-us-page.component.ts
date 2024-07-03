@@ -39,6 +39,7 @@ import { NavigationRoutes } from '../../../const/navigation-routes';
 })
 export class AboutUsPageComponent implements OnInit, AfterViewInit {
   @ViewChild('aboutPage', { static: true }) aboutPage!: ElementRef;
+  @ViewChild('aboutSection', { static: true }) aboutSection!: ElementRef;
   isInView: boolean = false;
 
   infoData = [
@@ -74,12 +75,12 @@ export class AboutUsPageComponent implements OnInit, AfterViewInit {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.isInView = true;
-          observer.unobserve(this.aboutPage.nativeElement);
+          observer.unobserve(this.aboutSection.nativeElement);
         }
       });
     });
 
-    observer.observe(this.aboutPage.nativeElement);
+    observer.observe(this.aboutSection.nativeElement);
   }
 
 }

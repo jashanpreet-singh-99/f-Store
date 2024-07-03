@@ -6,7 +6,7 @@
             <span>Learn More</span>
         </button>
     </div>
-    <div class="information-container">
+    <div class="information-container" #aboutSection>
         <div class="text-container">
             <ng-container *ngFor="let info of infoData; let i = index">
                 <div class="info-container" *ngIf="isInView" [@fadeIn]="{value:'', params: {delay: (i + 1) * 500}}">
