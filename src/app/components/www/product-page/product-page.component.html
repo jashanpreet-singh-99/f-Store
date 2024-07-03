@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Products</h1>
+    <div class="products-container">
+        <ng-container *ngFor="let product of products">
+            <div class="product-item">
+                <div class="bg"></div>
+                <h2>{{ product.title }}</h2>
+                <p>{{ product.price | productPrice}}</p>
+                <img [src]="product.img">
+            </div>
+        </ng-container>
+    </div>
+</div>
