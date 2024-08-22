@@ -1,7 +1,7 @@
 # 🌟 Angular F-Store 🌟
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://f-store.jashanswork.com/)
 
-![Banner](screenshots/banner-low-res.png)
+![Banner](https://raw.githubusercontent.com/jashanpreet-singh-99/f-store/main/screenshots/banner-low-res.png)
 
 
 Welcome to the **Angular F-Store** repository! This project showcases my skills in **CSS3**, **SCSS**, **HTML5**, and **Angular**. It's designed to provide a delightful and responsive user experience across all devices, including mobile, tablet, and desktop. Dive in to explore sleek animations, responsive designs, and a modern UI that adapts seamlessly to any screen size. 
@@ -18,13 +18,13 @@ Complete Development time: 8:11:26.99
 
 ## 📸 Screenshots
 
-![Home](screenshots/home-page.png)
+![Home](https://raw.githubusercontent.com/jashanpreet-singh-99/f-store/main/screenshots/home-page.png)
 *Home Page*
-![About](screenshots/about-us-page.png)
+![About](https://raw.githubusercontent.com/jashanpreet-singh-99/f-store/main/screenshots/about-us-page.png)
 *About Page*
-![Product](screenshots/products-page.png)
+![Product](https://raw.githubusercontent.com/jashanpreet-singh-99/f-store/main/screenshots/products-page.png)
 *Product Page*
-![Contact](screenshots/conact-page.png)
+![Contact](https://raw.githubusercontent.com/jashanpreet-singh-99/f-store/main/screenshots/conact-page.png)
 *Contact Page*
 
 ## 📚 Technologies Used
